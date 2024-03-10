@@ -282,7 +282,7 @@ impl<T: EventListener> Execute<T> for Action {
                 let text = ctx.clipboard_mut().load(ClipboardType::Selection);
                 ctx.paste(&text);
             },
-            Action::ToggleFullscreen => ctx.window().toggle_fullscreen(),
+            Action::ToggleFullscreen => ctx.window().toggle_simple_fullscreen(),
             Action::ToggleMaximized => ctx.window().toggle_maximized(),
             #[cfg(target_os = "macos")]
             Action::ToggleSimpleFullscreen => ctx.window().toggle_simple_fullscreen(),
